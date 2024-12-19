@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+<FlowPane minHeight="600.0" minWidth="1000.0" prefHeight="707.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ViewController">
+    <TabPane fx:id="tabPane" prefHeight="700.0" prefWidth="1220.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab fx:id="PetsTab" text="Pets">
+            <FlowPane prefWidth="1050.0">
+                <TableView fx:id="table" prefHeight="1000.0" prefWidth="900.0">
+                    <columns>
+                        <TableColumn fx:id="namePetCol" text="Name" />
+                        <TableColumn fx:id="ageCol" text="Age" />
+                        <TableColumn fx:id="speciesCol" text="Species" />
+                        <TableColumn fx:id="genderCol" text="Gender" />
+                        <TableColumn fx:id="colorCol" text="Color" />
+                        <TableColumn fx:id="priceCol" text="Price" />
+                        <TableColumn fx:id="detailsCol" text="Details" />
+                        <TableColumn fx:id="commentsCol" text="Comments" />
+                        <TableColumn fx:id="isForSaleCol" text="ForSale" />
+                    </columns>
+                </TableView>
+                <VBox fx:id="labelBox" alignment="TOP_CENTER" layoutX="801.0" layoutY="32.0" prefHeight="1000.0" prefWidth="90.0" spacing="13.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets top="3.0" />
+                    </padding>
+                    <Label text="Name:" />
+                    <Label text="Age:" />
+                    <Label text="Species:" />
+                    <Label text="Gender:" />
+                    <Label text="Color:" />
+                    <Label text="Price:" />
+                    <Label text="Details:" />
+                    <Label text="Comments:" />
+                    <Label text="Is for sale:" />
+                    <Label />
+               <FlowPane.margin>
+                  <Insets top="10.0" />
+               </FlowPane.margin>
+                </VBox>
+                <VBox fx:id="formBox" alignment="TOP_CENTER" layoutX="879.0" layoutY="32.0" prefHeight="500.0" prefWidth="200.0" spacing="5.0" AnchorPane.rightAnchor="23.0">
+                    <TextField fx:id="nameInput" promptText="pet's name" />
+                    <TextField fx:id="ageInput" promptText="pet's age" />
+                    <TextField fx:id="speciesInput" promptText="pet's species" />
+                    <TextField fx:id="genderInput" promptText="pet's gender" />
+                    <TextField fx:id="colorInput" promptText="pet's color" />
+                    <TextField fx:id="priceInput" promptText="pet's price" />
+                    <TextField fx:id="detailsInput" promptText="pet's details" />
+                    <TextField fx:id="commentsInput" promptText="pet's comments" />
+                    <CheckBox fx:id="forSaleInput" mnemonicParsing="false">
+                    <VBox.margin>
+                        <Insets top="3.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets right="170.0" />
+                    </padding></CheckBox>
+                    <Button onAction="#handleAdd" prefHeight="25.0" prefWidth="185.0" text="Add" />
+                    <Button onAction="#handleEdit" prefHeight="25.0" prefWidth="185.0" text="Edit" />
+                    <Button onAction="#handleRemove" prefHeight="25.0" prefWidth="185.0" text="Remove" />
+                    <Button onAction="#clearInputs" prefHeight="25.0" prefWidth="185.0" text="Clear inputs" />
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+               <FlowPane.margin>
+                  <Insets top="10.0" />
+               </FlowPane.margin>
+                </VBox>
+            </FlowPane>
+        </Tab>
+        <Tab fx:id="CustomersTab" text="Customers">
+            <FlowPane prefHeight="585.0" prefWidth="1050.0">
+                <TableView fx:id="tableC" prefHeight="1000.0" prefWidth="900.0">
+                    <columns>
+                        <TableColumn fx:id="nameCustomerCol" text="Name" />
+                        <TableColumn fx:id="surnameCol" text="Surname" />
+                        <TableColumn fx:id="emailCol" prefWidth="150.0" text="Email" />
+                        <TableColumn fx:id="phoneNoCol" prefWidth="150.0" text="Phone number" />
+                    </columns>
+                </TableView>
+                <VBox fx:id="labelBoxC" alignment="TOP_CENTER" layoutX="801.0" layoutY="32.0" prefHeight="500.0" prefWidth="90.0" spacing="13.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets top="3.0" />
+                    </padding>
+                    <Label text="Name:" />
+                    <Label text="Surname:" />
+                    <Label text="Email:" />
+                    <Label text="Phone:" />
+                    <Label />
+               <FlowPane.margin>
+                  <Insets top="10.0" />
+               </FlowPane.margin>
+                </VBox>
+                <VBox fx:id="formBoxC" alignment="TOP_CENTER" layoutX="879.0" layoutY="32.0" prefHeight="500.0" prefWidth="200.0" spacing="5.0">
+                    <TextField fx:id="nameCustomerInput" promptText="customer's name" />
+                    <TextField fx:id="surnameInput" promptText="customer's surname" />
+                    <TextField fx:id="emailInput" promptText="customer's email" />
+                    <TextField fx:id="phoneNoInput" promptText="customer's phone number" />
+                    <Button onAction="#handleAdd" prefHeight="25.0" prefWidth="185.0" text="Add" />
+                    <Button onAction="#handleEdit" prefHeight="25.0" prefWidth="185.0" text="Edit" />
+                    <Button onAction="#handleRemove" prefHeight="25.0" prefWidth="185.0" text="Remove" />
+                    <Button onAction="#clearInputs" prefHeight="25.0" prefWidth="185.0" text="Clear inputs" />
+                        <VBox.margin>
+                            <Insets top="3.0" />
+                        </VBox.margin>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+               <FlowPane.margin>
+                  <Insets top="10.0" />
+               </FlowPane.margin>
+                </VBox>
+            </FlowPane>
+        </Tab>
+        <Tab fx:id="KennelTab" text="Kennel bookings">
+            <FlowPane prefWidth="1050.0">
+                <TableView fx:id="tableB" prefHeight="1000.0" prefWidth="900.0">
+                    <columns>
+                        <TableColumn fx:id="namePetBCol" text="Pet's name" />
+                        <TableColumn fx:id="speciesBCol" text="Species" />
+                        <TableColumn fx:id="commentsBCol" text="Comments" />
+                        <TableColumn fx:id="nameCusBCol" text="Name" />
+                        <TableColumn fx:id="surnameBCol" text="Surname" />
+                        <TableColumn fx:id="emailBCol" text="Email" />
+                        <TableColumn fx:id="phoneNoBCol" prefWidth="99.0" text="Phone number" />
+                        <TableColumn fx:id="dateOfRCol" prefWidth="77.0" text="Start date" />
+                        <TableColumn fx:id="endDateCol" prefWidth="78.0" text="End date" />
+                        <TableColumn fx:id="pricePDCol" prefWidth="82.0" text="Price per Day" />
+                        <TableColumn fx:id="finalPriceCol" prefWidth="83.0" text="Final price" />
+                    </columns>
+                </TableView>
+                <VBox alignment="TOP_CENTER" layoutX="801.0" layoutY="32.0" prefHeight="1000.0" prefWidth="90.0" spacing="13.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets top="3.0" />
+                    </padding>
+                    <Label text="Pet:" />
+                    <Label text="Customer:" />
+                    <Label text="Start date:" />
+                    <Label text="End date:" />
+                    <Label text="Price per day:" />
+                    <Label />
+                    <FlowPane.margin>
+                        <Insets top="10.0" />
+                    </FlowPane.margin>
+                </VBox>
+                <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="200.0" spacing="5.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <ComboBox fx:id="petBComboBox" prefHeight="25.0" prefWidth="204.0" promptText="Choose a pet" />
+                    <ComboBox fx:id="customerBComboBox" prefHeight="25.0" prefWidth="202.0" promptText="Choose a customer">
+                    <VBox.margin>
+                     <Insets />
+                    </VBox.margin></ComboBox>
+                    <DatePicker fx:id="startDatePicker" prefHeight="25.0" prefWidth="200.0" />
+                    <DatePicker fx:id="endDatePicker" prefWidth="200.0" />
+
+                    <TextField fx:id="priceBInput" prefWidth="185.0" promptText="Price per day" />
+                    <Button onAction="#handleAdd" prefHeight="25.0" prefWidth="185.0" text="Add" />
+                    <Button onAction="#handleEdit" prefHeight="25.0" prefWidth="185.0" text="Edit" />
+                    <Button onAction="#handleRemove" prefHeight="25.0" prefWidth="185.0" text="Remove" />
+                    <Button onAction="#clearInputs" prefHeight="25.0" prefWidth="185.0" text="Clear inputs" />
+               <FlowPane.margin>
+                  <Insets top="10.0" />
+               </FlowPane.margin>
+                </VBox>
+            </FlowPane>
+        </Tab>
+        <Tab fx:id="SalesTab" text="Sales">
+            <FlowPane prefWidth="1050.0">
+                <TableView fx:id="tableS" prefHeight="1000.0" prefWidth="900.0">
+                   <columns>
+                       <TableColumn fx:id="petNameSCol" prefWidth="104.0" text="Pet's name" />
+                       <TableColumn fx:id="speciesSCol" prefWidth="95.0" text="Species" />
+                       <TableColumn fx:id="customerNameSCol" prefWidth="109.0" text="Name" />
+                       <TableColumn fx:id="customerSurnameSCol" prefWidth="147.0" text="Surname" />
+                       <TableColumn fx:id="customerEmailSCol" prefWidth="109.0" text="Email" />
+                       <TableColumn fx:id="customerPhoneSCol" prefWidth="147.0" text="Phone number" />
+                       <TableColumn fx:id="saleDateSCol" minWidth="0.0" prefWidth="96.0" text="Date of sale" />
+                       <TableColumn fx:id="priceSCol" prefWidth="90.0" text="Price" />
+                   </columns>
+                </TableView>
+                <VBox alignment="TOP_CENTER" layoutX="801.0" layoutY="32.0" prefHeight="1000.0" prefWidth="90.0"
+                      spacing="13.0">
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <padding>
+                        <Insets top="3.0"/>
+                    </padding>
+                    <FlowPane.margin>
+                        <Insets top="10.0"/>
+                    </FlowPane.margin>
+                    <Label text="Pet:"/>
+                    <Label text="Customer:"/>
+                    <Label text="Date:"/>
+                    <Label text="Price:"/>
+                    <Label/>
+                </VBox>
+                <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="200.0" spacing="5.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <FlowPane.margin>
+                        <Insets top="10.0" />
+                    </FlowPane.margin>
+                    <ComboBox fx:id="petSComboBox" prefHeight="25.0" prefWidth="204.0" promptText="Choose a pet" />
+                    <ComboBox fx:id="customerSComboBox" prefHeight="25.0" prefWidth="202.0" promptText="Choose a customer">
+                        <VBox.margin>
+                            <Insets />
+                        </VBox.margin>
+                    </ComboBox>
+                    <DatePicker fx:id="DatePickerS" prefHeight="25.0" prefWidth="200.0" />
+                    <TextField fx:id="priceSInput1" prefWidth="185.0" promptText="Price" />
+                    <Button onAction="#handleAdd" prefHeight="25.0" prefWidth="185.0" text="Add" />
+                    <Button onAction="#handleEdit" prefHeight="25.0" prefWidth="185.0" text="Edit" />
+                    <Button onAction="#handleRemove" prefHeight="25.0" prefWidth="185.0" text="Remove" />
+                    <Button onAction="#clearInputs" prefHeight="25.0" prefWidth="185.0" text="Clear inputs" />
+                </VBox>
+            </FlowPane>
+        </Tab>
+    </TabPane>
+
+</FlowPane>
